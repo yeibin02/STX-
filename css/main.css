@@ -36,6 +36,71 @@ img {
   width: 100%;
   clear: both;
 }
+/* 안내창 */
+body:active {
+  overflow-y: auto;
+}
+.modal-wrap {
+  font-family: "Noto Sans KR", Helvetica, "맑은 고딕", "malgun gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+.modal-main {
+  position: absolute;
+  display: block;
+  width: 500px;
+  padding-top: 60px;
+  line-height: 50px;
+  top: 30%;
+  left: 37%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.modal-logo img {
+  position: absolute;
+  top: -30px;
+  left: 44%;
+  width: 60px;
+  height: 60px;
+}
+/* .modal-logo {
+  position: absolute;
+  display: block;
+  top: -20px;
+  left: 45%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #fff;
+} */
+.modal-notice {
+  font-weight: 700;
+}
+.modal-notice > strong {
+  font-weight: 700;
+  color: #ed1c24;
+  background: linear-gradient(to top, yellow 50%, transparent 50%);
+}
+.modal-notice > span {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.modal-close {
+  margin-top: 60px;
+  font-weight: 700;
+}
+.modal-close i {
+  font-size: 13px;
+  font-weight: 500;
+}
 /* 레이아웃 */
 .wrap {
   position: relative;
@@ -571,7 +636,7 @@ img {
   color: #444;
 }
 /* 회사소개 */
-.about{
+.about {
   width: 1200px;
   margin: 100px auto;
 }
@@ -581,7 +646,7 @@ img {
   position: relative;
   display: block;
 }
-.text_box{
+.text_box {
   position: relative;
   display: block;
   height: 370px;
@@ -599,7 +664,7 @@ img {
   position: relative;
   padding-left: 90px;
 }
-.text_sub_box::after{
+.text_sub_box::after {
   position: absolute;
   left: 0px;
   top: 18px;
@@ -608,100 +673,190 @@ img {
   background: #ed1c24;
   content: "";
 }
-.tittle{
+.tittle {
   font-weight: 600;
   font-size: 20px;
   line-height: 25px;
   color: #111;
   margin-bottom: 20px;
 }
-.text_sub{
+.text_sub {
   font-size: 16px;
   line-height: 20px;
 }
 /* icon */
-.about-bottom{
+.about-bottom {
   position: relative;
   display: block;
   text-align: center;
   margin-top: 100px;
   padding-left: 230px;
 }
-.about-list{
+.about-list {
   position: relative;
   display: block;
   text-align: center;
 }
-.about-list > li{
+.about-list > li {
   position: relative;
   display: block;
   float: left;
 }
-.about-list > li > a{
+.about-list > li > a {
   font-size: 22px;
   color: #111;
   font-weight: 500;
 }
-.about-list > li > a::before{
+.about-list > li > a::before {
   content: "";
   position: relative;
   display: block;
   width: 110px;
   height: 108px;
-  background: url("../imgs/bg_icon.png")no-repeat;
+  background: url("../imgs/bg_icon.png") no-repeat;
   margin-bottom: 25px;
 }
-.about-list > li:nth-child(2){
+.about-list > li:nth-child(2) {
   margin: 0px 200px;
 }
-.about-list > li:nth-child(1) > a::before{
+.about-list > li:nth-child(1) > a::before {
   background-position: 0 0;
 }
-.about-list > li:nth-child(2) > a::before{
+.about-list > li:nth-child(2) > a::before {
   background-position: -110px 0;
 }
-.about-list > li:nth-child(3) > a::before{
+.about-list > li:nth-child(3) > a::before {
   background-position: -230px 0;
 }
 /* footer */
-.footer{
+.footer {
   position: relative;
   display: block;
   padding: 50px 0;
   background-color: #4e4e4e;
 }
-.footer-inner{
+.footer-inner {
   position: relative;
   display: block;
 }
-.footer-logo{
+.footer-logo {
   position: relative;
   display: block;
   float: left;
   margin-right: 130px;
 }
-.footer-info{
+.footer-info {
   position: relative;
   display: block;
   float: left;
 }
-.footer-list{
+.footer-list {
   position: relative;
   display: block;
 }
-.footer-list li{
+.footer-list li {
   position: relative;
   display: block;
   color: #c3c3ce;
   font-size: 13px;
   margin-bottom: 5px;
 }
-.footer-list > li > address{
+.footer-list > li > address {
   position: relative;
   display: block;
   font-style: normal;
 }
-.footer-list > li > i{
+.footer-list > li > i {
   position: relative;
   display: inline-block;
+}
+/* 탑 버튼 */
+.top_button {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.top_button > .chat-btn > img {
+  width: 80px;
+  height: 80px;
+}
+.top_button > .chat-btn > span {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  width: 160px;
+  background-color: #fff;
+  border-radius: 23px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  text-align: center;
+  line-height: 30px;
+  display: none;
+}
+.top_button .chat-btn:hover span {
+  display: block;
+  transition: 0.2s linear;
+}
+.top_button .shop-btn {
+  position: relative;
+  display: block;
+  width: 50px;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.06),
+    inset 0px 5px 10px 0 rgba(255, 255, 255, 0.14);
+  letter-spacing: normal;
+}
+.top_button .top-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #ed1c24;
+  border-radius: 50%;
+  text-align: center;
+}
+.top_button .chat-btn {
+  -webkit-animation: updown 1.5s infinite ease-in-out;
+  animation: updown 1.5s infinite ease-in-out;
+}
+.top_button .top-btn img {
+  transform: rotate(180deg);
+}
+.top_button .top-btn img.up {
+  transform: rotate(0deg);
+}
+@keyframes updown {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes updown {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
